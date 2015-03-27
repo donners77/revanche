@@ -12,13 +12,13 @@ What Revanche Is
 
 Revanche is a C# application written using Mono and Gtk#. It loads a framework you define in YAML and displays this framework to you in a nice GUI, allowing you to create and edit objects within said framework. The program is extremely flexible, and basically any tree of objects can be displayed, with whichever editable fields you like, using whatever values you feel necessary.
 
-Revanche should run on linux with Mono installed. To run on windows, you'll need to install Gtk#. To build the source code, you'll need MonoDevelop's Stetic designer to build the UI files.
+Revanche should run on Linux with Mono installed. To run on Windows, you'll need to install Gtk#. To build the source code, you'll need MonoDevelop's Stetic designer to build the UI files.
 
 Revanche makes use of [YamlDotNet](http://aaubry.net/pages/yamldotnet.html), available under the MIT license. Revanche itself is licensed under the GPL, version 3.0.
 
-What Revance Is Not
--------------------
+What Revanche Is Not
+--------------------
 
 Revanche is not an out-of-the-box solution. To make use of the program, you will need to define your own data structure, with the objects and details you want to see. I have included a few examples of how to do this in a README file in the structures folder; more examples and a skeleton character system will be uploaded in the future.
 
-* "revanche." Dictionary.com Unabridged. Random House, Inc. 26 Mar. 2015. <Dictionary.com http://dictionary.reference.com/browse/revanche>.
+\* "revanche." Dictionary.com Unabridged. Random House, Inc. 26 Mar. 2015. <Dictionary.com http://dictionary.reference.com/browse/revanche>.
