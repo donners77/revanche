@@ -11,7 +11,18 @@ namespace Revanche
 	{
 		private static bool buttonIcons=true;
 		private static bool buttonText=false;
-		private static string root=Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)+Path.DirectorySeparatorChar+"revanche"+Path.DirectorySeparatorChar;
+		private static string userHome=
+			( Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)!=""
+				? Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)
+				: ( (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.MacOSX)
+					? Environment.GetEnvironmentVariable("HOME")
+					: Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%") ) != ""
+				? (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.MacOSX)
+					? Environment.GetEnvironmentVariable("HOME")
+					: Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%")
+				: Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().CodeBase) )
+			+Path.DirectorySeparatorChar;
+		private static string root=userHome+"Revanche"+Path.DirectorySeparatorChar;
 		private static string noteStyle="i";
 		private static uint propertyPadding=0u;
 		private static string dateFormat="M/d/yyyy";
@@ -132,7 +143,7 @@ namespace Revanche
 		/// </summary>
 		public static void Load()
 		{
-			string configfile=Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)+Path.DirectorySeparatorChar+".revanche";
+			string configfile=Config.userHome+".revanche";
 			if(File.Exists(configfile)){
 				using(StreamReader sr=new StreamReader(configfile)){
 					string line;
@@ -146,14 +157,14 @@ namespace Revanche
 									case "buttonIcons":
 										buttonIcons=Boolean.Parse(config[1]);
 										break;
-									case "buttonText":
+										case "buttonText":
 										buttonText=Boolean.Parse(config[1]);
 										break;
-									case "root":
+										case "root":
 										Directory.CreateDirectory(config[1]);
 										root=config[1];
 										break;
-									case "noteStyle":
+										case "noteStyle":
 										if(config[1]!="i"&&config[1]!="u"){
 											System.Console.Error.WriteLine("Invalid config option: "+line);
 											System.Console.Error.WriteLine("Note style must be 'i' or 'u'.");
@@ -161,13 +172,13 @@ namespace Revanche
 											noteStyle=config[1];
 										}
 										break;
-									case "propertyPadding":
+										case "propertyPadding":
 										propertyPadding=UInt32.Parse(config[1]);
 										break;
-									case "dateFormat":
+										case "dateFormat":
 										dateFormat=config[1];
 										break;
-									case "timeFormat":
+										case "timeFormat":
 										timeFormat=config[1];
 										break;
 								}
@@ -175,6 +186,8 @@ namespace Revanche
 						}
 					}
 				}
+			} else{
+				Config.Save();
 			}
 		}
 
@@ -183,7 +196,7 @@ namespace Revanche
 		/// </summary>
 		public static void Save()
 		{
-			string configfile=Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)+Path.DirectorySeparatorChar+".revanche";
+			string configfile=userHome+".revanche";
 			using(StreamWriter sw=new StreamWriter(configfile,false)){
 				sw.WriteLine("buttonIcons="+buttonIcons.ToString());
 				sw.WriteLine("buttonText="+buttonText.ToString());
