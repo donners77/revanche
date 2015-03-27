@@ -123,6 +123,10 @@ namespace Revanche.Views
 			}
 		}
 
+		public void Edit(){
+			this.handleEdit(this,EventArgs.Empty);
+		}
+
 		protected void handleEdit(object sender,EventArgs e)
 		{
 			if(this.mainView.Child.GetType()==typeof(Views.Objects.Identifiable)){

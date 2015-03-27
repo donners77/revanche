@@ -180,6 +180,7 @@ namespace Revanche.Views.Objects
 		{
 			Models.Identifiable newChild=new Models.Identifiable(this.model,Models.RevModel.GetRegisteredModel(modelType));
 			MainWindow.Instance.ShowView(newChild);
+			MainWindow.Instance.Edit();
 		}
 
 		protected void handlerAddCollectable(string[] collectables)
@@ -188,6 +189,7 @@ namespace Revanche.Views.Objects
 			c.Modal=true;
 			c.Show();
 			c.Run();
+			MainWindow.Instance.Edit();
 		}
 	}
 }

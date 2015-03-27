@@ -107,11 +107,13 @@ namespace Revanche.Lib
 		/// </summary>
 		public void Load()
 		{
-			Lib.Yaml<Models.Identifiable> il=new Lib.Yaml<Revanche.Models.Identifiable>(new Serializer(),new Deserializer());
-			using(System.IO.StreamReader sr=new System.IO.StreamReader(Config.ROOT+"data"+Path.DirectorySeparatorChar+"index")){
-				string id;
-				while((id=sr.ReadLine())!=null){
-					il.Load("data"+Path.DirectorySeparatorChar+id);
+			if(File.Exists(Config.ROOT+"data"+Path.DirectorySeparatorChar+"index")){
+				Lib.Yaml<Models.Identifiable> il=new Lib.Yaml<Revanche.Models.Identifiable>(new Serializer(),new Deserializer());
+				using(System.IO.StreamReader sr=new System.IO.StreamReader(Config.ROOT+"data"+Path.DirectorySeparatorChar+"index")){
+					string id;
+					while((id=sr.ReadLine())!=null){
+						il.Load("data"+Path.DirectorySeparatorChar+id);
+					}
 				}
 			}
 		}
