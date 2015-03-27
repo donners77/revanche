@@ -7,13 +7,13 @@
           <Node name="Revanche" expanded="True">
             <Node name="Lib" expanded="True" />
             <Node name="Models" expanded="True" />
-            <Node name="Properties" expanded="True" />
+            <Node name="Properties" expanded="True">
+              <Node name="AssemblyInfo.cs" selected="True" />
+            </Node>
             <Node name="Types" expanded="True" />
             <Node name="Views" expanded="True">
               <Node name="Base" expanded="True" />
-              <Node name="Dialogs" expanded="True">
-                <Node name="Error.cs" selected="True" />
-              </Node>
+              <Node name="Dialogs" expanded="True" />
               <Node name="Displays" expanded="True" />
               <Node name="Fields" expanded="True" />
               <Node name="Objects" expanded="True" />
