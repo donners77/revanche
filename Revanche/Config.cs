@@ -73,6 +73,9 @@ namespace Revanche
 			}
 			set{
 				if(root!=value){
+					// create parents and new directory, then delete new directory to prevent IOException, leaving parents
+					Directory.CreateDirectory(value);
+					Directory.Delete(value);
 					Directory.Move(root,value);
 				}
 				root=value;

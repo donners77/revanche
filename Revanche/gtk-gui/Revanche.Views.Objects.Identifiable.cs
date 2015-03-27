@@ -227,25 +227,19 @@ namespace Revanche.Views.Objects
 			w20.Expand = false;
 			w20.Fill = false;
 			// Container child dataContainer.Gtk.Box+BoxChild
-			this.properties = new global::Revanche.Views.Objects.Properties ();
-			this.properties.Events = ((global::Gdk.EventMask)(256));
-			this.properties.Name = "properties";
+			this.properties = null;
 			this.dataContainer.Add (this.properties);
 			global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.dataContainer [this.properties]));
 			w21.Position = 1;
 			w21.Expand = false;
 			// Container child dataContainer.Gtk.Box+BoxChild
-			this.children = new global::Revanche.Views.Objects.Children ();
-			this.children.Events = ((global::Gdk.EventMask)(256));
-			this.children.Name = "children";
+			this.children = null;
 			this.dataContainer.Add (this.children);
 			global::Gtk.Box.BoxChild w22 = ((global::Gtk.Box.BoxChild)(this.dataContainer [this.children]));
 			w22.Position = 2;
 			w22.Expand = false;
 			// Container child dataContainer.Gtk.Box+BoxChild
-			this.collection = new global::Revanche.Views.Objects.Collection ();
-			this.collection.Events = ((global::Gdk.EventMask)(256));
-			this.collection.Name = "collection";
+			this.collection = null;
 			this.dataContainer.Add (this.collection);
 			global::Gtk.Box.BoxChild w23 = ((global::Gtk.Box.BoxChild)(this.dataContainer [this.collection]));
 			w23.Position = 3;
