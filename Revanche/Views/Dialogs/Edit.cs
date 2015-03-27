@@ -57,17 +57,17 @@ namespace Revanche.Views.Dialogs
 				this.table1.Attach(label,0,1,counter,counter+1);
 				(this.table1[label] as Gtk.Table.TableChild).XOptions=Gtk.AttachOptions.Fill;
 				ValuedField widget;
-				if(model.GetTypeInfo(key)==Types.RevType.GetRegisteredType("COLOR")){
+				if(model.GetTypeInfo(key).Id=="COLOR"){
 					widget=new Fields.Color(model.Property(key) as string);
-				} else if(model.GetTypeInfo(key)==Types.RevType.GetRegisteredType("BOOLEAN")){
+				} else if(model.GetTypeInfo(key).Id=="BOOLEAN"){
 					widget=new Fields.Toggle((model.Property(key) as bool?)??false);
 				} else if(model.GetTypeInfo(key).ContentType==Revanche.Types.Content.ENUMERATED){
 					widget=new Fields.Select(model.GetTypeInfo(key).Values,(model.Property(key)??"").ToString(),typeof(string));
-				} else if(model.GetTypeInfo(key)==Types.RevType.GetRegisteredType("DECIMAL")){
+				} else if(model.GetTypeInfo(key).Id=="DECIMAL"){
 					widget=new Fields.Decimal((model.Property(key) as double?)??0.0);
-				} else if(model.GetTypeInfo(key)==Types.RevType.GetRegisteredType("INTEGER")){
+				} else if(model.GetTypeInfo(key).Id=="INTEGER"){
 					widget=new Fields.Integer((model.Property(key) as int?)??0);
-				} else if(model.GetTypeInfo(key)==Types.RevType.GetRegisteredType("TIMESTAMP")){
+				} else if(model.GetTypeInfo(key).Id=="TIMESTAMP"){
 					widget=new Fields.Date((model.Property(key) as long?)??0L);
 				} else{
 					// safest if we don't know the right one

@@ -38,7 +38,7 @@ namespace Revanche.Views.Objects
 				this.table1.Attach(widget,0,1,counter,counter+1);
 				(this.table1[widget] as Gtk.Table.TableChild).XOptions=Gtk.AttachOptions.Fill;
 				string propertyNote=model.PropertyNote(key);
-				if(model.GetTypeInfo(key)!=Types.RevType.GetRegisteredType("COLOR")){
+				if(model.GetTypeInfo(key).Id!="COLOR"){
 					widget=new Displays.Text(model.Property(key)??"",propertyNote!="");
 				} else{
 					widget=new Displays.Color(model.Property(key)as string,propertyNote!="");

@@ -39,7 +39,7 @@ namespace Revanche.Views.Dialogs
 			w2.Expand = false;
 			w2.Fill = false;
 			// Container child vbox2.Gtk.Box+BoxChild
-			this.nonstupidcombobox1 = new Revanche.Views.Base.NonStupidComboBox();
+			this.nonstupidcombobox1=new Revanche.Views.Base.NonStupidComboBox();
 			this.nonstupidcombobox1.Name = "nonstupidcombobox1";
 			this.vbox2.Add (this.nonstupidcombobox1);
 			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.nonstupidcombobox1]));
