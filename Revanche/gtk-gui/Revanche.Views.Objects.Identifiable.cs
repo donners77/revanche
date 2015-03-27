@@ -28,9 +28,9 @@ namespace Revanche.Views.Objects
 		private global::Gtk.HSeparator separator;
 		private global::Gtk.Alignment alignment5;
 		private global::Gtk.VBox dataContainer;
+		private global::Revanche.Views.Objects.Properties properties;
 		private global::Gtk.Alignment alignment6;
 		private global::Gtk.Label notes;
-		private global::Revanche.Views.Objects.Properties properties;
 		private global::Revanche.Views.Objects.Children children;
 		private global::Revanche.Views.Objects.Collection collection;
 
@@ -209,6 +209,14 @@ namespace Revanche.Views.Objects
 			this.dataContainer = new global::Gtk.VBox ();
 			this.dataContainer.Name = "dataContainer";
 			// Container child dataContainer.Gtk.Box+BoxChild
+			this.properties = new global::Revanche.Views.Objects.Properties ();
+			this.properties.Events = ((global::Gdk.EventMask)(256));
+			this.properties.Name = "properties";
+			this.dataContainer.Add (this.properties);
+			global::Gtk.Box.BoxChild w19 = ((global::Gtk.Box.BoxChild)(this.dataContainer [this.properties]));
+			w19.Position = 0;
+			w19.Expand = false;
+			// Container child dataContainer.Gtk.Box+BoxChild
 			this.alignment6 = new global::Gtk.Alignment (0.5F, 0.5F, 1F, 1F);
 			this.alignment6.Name = "alignment6";
 			this.alignment6.LeftPadding = ((uint)(10));
@@ -222,24 +230,22 @@ namespace Revanche.Views.Objects
 			this.notes.Justify = ((global::Gtk.Justification)(3));
 			this.alignment6.Add (this.notes);
 			this.dataContainer.Add (this.alignment6);
-			global::Gtk.Box.BoxChild w20 = ((global::Gtk.Box.BoxChild)(this.dataContainer [this.alignment6]));
-			w20.Position = 0;
-			w20.Expand = false;
-			w20.Fill = false;
-			// Container child dataContainer.Gtk.Box+BoxChild
-			this.properties = null;
-			this.dataContainer.Add (this.properties);
-			global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.dataContainer [this.properties]));
+			global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.dataContainer [this.alignment6]));
 			w21.Position = 1;
 			w21.Expand = false;
+			w21.Fill = false;
 			// Container child dataContainer.Gtk.Box+BoxChild
-			this.children = null;
+			this.children = new global::Revanche.Views.Objects.Children ();
+			this.children.Events = ((global::Gdk.EventMask)(256));
+			this.children.Name = "children";
 			this.dataContainer.Add (this.children);
 			global::Gtk.Box.BoxChild w22 = ((global::Gtk.Box.BoxChild)(this.dataContainer [this.children]));
 			w22.Position = 2;
 			w22.Expand = false;
 			// Container child dataContainer.Gtk.Box+BoxChild
-			this.collection = null;
+			this.collection = new global::Revanche.Views.Objects.Collection ();
+			this.collection.Events = ((global::Gdk.EventMask)(256));
+			this.collection.Name = "collection";
 			this.dataContainer.Add (this.collection);
 			global::Gtk.Box.BoxChild w23 = ((global::Gtk.Box.BoxChild)(this.dataContainer [this.collection]));
 			w23.Position = 3;
