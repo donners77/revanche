@@ -1197,11 +1197,8 @@ Underline</property>
         <property name="MemberName" />
         <property name="Spacing">6</property>
         <child>
-          <widget class="Gtk.Label" id="label">
+          <widget class="Gtk.Image" id="image">
             <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">label7</property>
-            <property name="UseMarkup">True</property>
-            <property name="Wrap">True</property>
           </widget>
           <packing>
             <property name="PackType">End</property>
@@ -1212,8 +1209,11 @@ Underline</property>
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Image" id="image">
+          <widget class="Gtk.Label" id="label">
             <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">label7</property>
+            <property name="UseMarkup">True</property>
+            <property name="Wrap">True</property>
           </widget>
           <packing>
             <property name="PackType">End</property>
