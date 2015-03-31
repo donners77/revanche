@@ -6,7 +6,7 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <widget-library name="../bin/Release/Revanche.exe" internal="true" />
+    <widget-library name="../bin/Debug/Revanche.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="Revanche.Views.MainWindow" design-size="408 300">
     <action-group name="Default">
