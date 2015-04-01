@@ -48,6 +48,7 @@ namespace Revanche.Views.Dialogs
 				columns.PackStart(e,true,true,0);
 				counter++;
 			}
+			this.rows.PackStart(columns,true,true,0);
 			this.ShowAll();
 		}
 
